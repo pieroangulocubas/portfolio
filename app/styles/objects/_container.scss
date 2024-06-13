@@ -1,0 +1,8 @@
+@use "@/styles/settings/variables";
+@use "@/styles/tools/mixins";
+
+.container{
+  max-width: variables.$max-width;
+  width: calc(100% - 2rem);
+  margin:0 auto;
+}

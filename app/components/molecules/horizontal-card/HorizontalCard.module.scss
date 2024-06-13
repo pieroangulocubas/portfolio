@@ -1,0 +1,54 @@
+@use "@/styles/settings/variables";
+@use "@/styles/tools/mixins";
+
+.horizontal-card{
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: .5rem 0;
+  max-width: 480px;
+  margin: 0 auto;
+
+
+  &__buttons{
+    display: flex;
+    gap: 1.125rem;
+    margin-top: 1.5rem;
+  }
+  &__description{
+    margin-top: .5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: variables.$font-small;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    @include mixins.mq(480px) {
+        font-size: variables.$font-normal
+    }
+  }
+  &__image{
+    border-radius: 1rem;
+    img{
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: variables.$shadow-md;
+    }
+  }
+
+  &__category{
+    font-size: variables.$font-small;
+  }
+  @include mixins.mq(320px){
+    &__buttons {
+      gap: 1.5rem;
+    }
+  }
+  @include mixins.mq(1024px) {
+    flex-direction: row;
+    gap: 0 4rem;
+    max-width: max-content;
+  }
+}

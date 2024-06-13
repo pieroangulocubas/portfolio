@@ -1,0 +1,27 @@
+@use "@/styles/settings/variables";
+@use "@/styles/tools/mixins";
+
+.heading{
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  max-height: max-content;
+  font-size: variables.$font-title-ss;
+  &__tecnologies{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+  }
+  @include mixins.mq(480px) {
+    font-size: variables.$font-title-sm;
+  }
+
+  @include mixins.mq(1024px) {
+    font-size: variables.$font-title-md;
+
+    &.in-hero {
+      font-size: variables.$font-title-lg;
+    }
+  }
+    
+}
